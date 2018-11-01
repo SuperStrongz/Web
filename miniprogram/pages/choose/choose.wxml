@@ -1,0 +1,27 @@
+<view>
+  <view class="operate">WeChat</view>
+  <view class="title">试试什么职业适合你</view>
+  <view class="section">
+    <picker bindchange="bindPickerChangeEducation" value="{{educationindex}}" range="{{educationarray}}">
+      <view class="picker">学历：{{educationarray[educationindex]}}</view>
+    </picker>
+    <picker bindchange="bindPickerChangeSex" value="{{sexindex}}" range="{{sexarray}}">
+      <view class="picker">性别：{{sexarray[sexindex]}}</view>
+    </picker>
+    <picker bindchange="bindPickerChangeAge" value="{{ageindex}}" range="{{agearray}}">
+      <view class="picker">年龄：{{agearray[ageindex]}}</view>
+    </picker>
+    <picker bindchange="bindPickerChangeBasics" value="{{basicsindex}}" range="{{basicsarray}}">
+      <view class="picker">基础：{{basicsarray[basicsindex]}}</view>
+    </picker>
+    <picker bindchange="bindPickerChangeSubject" value="{{subjectindex}}" range="{{subjectarray}}">
+      <view class="picker">专业：{{subjectarray[subjectindex]}}</view>
+    </picker>
+    <picker bindchange="bindPickerChangeLogic" value="{{logicindex}}" range="{{logicarray}}">
+      <view class="picker">逻辑：{{logicarray[logicindex]}}</view>
+    </picker>
+  </view>
+  <button type="primary" bindtap="skip">
+    <navigator>选好了，点击查看</navigator>
+  </button>
+</view>

@@ -1,0 +1,9 @@
+.operate {
+  text-align: center;
+}
+.title {
+  text-align: center;
+}
+.picker {
+  border-top: 2px solid #b8b8b8;
+}
