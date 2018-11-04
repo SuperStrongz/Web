@@ -1,0 +1,13 @@
+.profession {
+  width: 33%;
+  border-bottom: 3px solid #fff;
+  display: inline-block;
+  text-align: center;
+}
+.toptitle,
+.subtitle {
+  text-align: center;
+}
+.back {
+  float: left;
+}

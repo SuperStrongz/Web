@@ -38,14 +38,28 @@ Page({
       logicindex: e.detail.value
     });
   },
+  onLoad: function() {
+    this.data.educationindex = 0;
+    this.data.sexindex = 0;
+    this.data.ageindex = 0;
+    this.data.basicsindex = 0;
+    this.data.subjectindex = 0;
+    this.data.logicindex = 0;
+  },
   skip: function() {
-    console.log(this.data.educationarray[this.data.educationindex]);
+    var passParameter = [
+      this.data.educationarray[this.data.educationindex],
+      this.data.sexarray[this.data.sexindex],
+      this.data.agearray[this.data.ageindex],
+      this.data.basicsarray[this.data.basicsindex],
+      this.data.subjectarray[this.data.subjectindex],
+      this.data.logicarray[this.data.logicindex]
+    ];
+
+    wx.setStorageSync("key", passParameter);
     wx.navigateTo({
-      url:
-        "../result/result?education=this.data.educationarray[this.data.educationindex]&sex=sexarray[sexindex]&age=agearray[ageindex]&basics=basicsarray[basicsindex]&subject=subjectarray[subjectindex]&logic=logicarray[logicindex]",
-      success: function() {
-        console.log(111);
-      }
+      url: "../result/result",
+      success: function() {}
     });
   }
 });

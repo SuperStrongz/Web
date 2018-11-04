@@ -1,1 +1,7 @@
-<view>hello</view>
+<view class="toptitle">
+  <view class="back">返回</view>
+  WeChat
+</view>
+<view class="subtitle">最适合你的职业推荐</view>
+<view wx:for="{{profession}}" wx:key="profession" class="profession">{{profession[index]}}</view>
+<view wx:for="{{title}}" class="title" wx:key="title">{{title[index]}}:</view>

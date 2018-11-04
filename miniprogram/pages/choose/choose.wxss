@@ -1,5 +1,6 @@
 .operate {
   text-align: center;
+  margin: 5px 0 10px 0;
 }
 .title {
   text-align: center;

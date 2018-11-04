@@ -2,7 +2,7 @@
   <view class="operate">WeChat</view>
   <view class="title">试试什么职业适合你</view>
   <view class="section">
-    <picker bindchange="bindPickerChangeEducation" value="{{educationindex}}" range="{{educationarray}}">
+    <picker bindchange="bindPickerChangeEducation" range="{{educationarray}}">
       <view class="picker">学历：{{educationarray[educationindex]}}</view>
     </picker>
     <picker bindchange="bindPickerChangeSex" value="{{sexindex}}" range="{{sexarray}}">
