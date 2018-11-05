@@ -8,7 +8,9 @@ Page({
       "入学基础",
       "资薪待遇"
     ],
-    profession: ["css", "op", "pm"]
+    profession: [{ name: "css" }, { name: "op" }, { name: "pm" }],
+    filtrateResult: "",
+    currentTabsIndex: 0
   },
   onShow: function() {
     var getParameter = wx.getStorageSync("key");
@@ -20,15 +22,27 @@ Page({
         console.log(res.data);
       }
     });
-    wx.setTabBarItem({
-      index: 0,
-      text: "css"
-    });
   },
   onUnload: function() {
     wx.clearStorage("key");
   },
+  showContent: function(data, firstId, secondId, thirdId) {
+    this.setData({
+      filtrateResult: {
+        firstShow: data.data.occupations.firstId,
+        secondShow: data.data.occupations.secondId,
+        thirdShow: data.data.occupations.thirdId
+      }
+    });
+  },
   calculateScore: function() {
     // CSS|JS|ANDROID|IOS|JAVA|OP|PM|UI
+  },
+  changeColor: function(event) {
+    console.log(event.currentTarget.dataset.index);
+    this.setData({
+      //将当前点击的index值取到
+      currentTabsIndex: event.currentTarget.dataset.index
+    });
   }
 });

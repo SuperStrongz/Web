@@ -1,7 +1,11 @@
-<view class="toptitle">
-  <view class="back">返回</view>
-  WeChat
+<view>
+  <view class="toptitle">WeChat</view>
+  <view class="subtitle">最适合你的职业推荐</view>
+  <view class="list">
+    <view wx:for="{{profession}}" wx:key="profession" class="profession {{currentTabsIndex == index ? 'clicked' : ''}}" bindtap="changeColor" data-index="{{index}}">
+      {{profession[index].name}}
+    </view>
+    <view wx:for="{{title}}" class="title" wx:key="title">{{title[index]}}  css</view>
+  </view>
+  <view class="studyPeople">2753人在学</view>
 </view>
-<view class="subtitle">最适合你的职业推荐</view>
-<view wx:for="{{profession}}" wx:key="profession" class="profession">{{profession[index]}}</view>
-<view wx:for="{{title}}" class="title" wx:key="title">{{title[index]}}:</view>

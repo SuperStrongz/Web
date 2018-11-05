@@ -1,10 +1,25 @@
 .operate {
   text-align: center;
-  margin: 5px 0 10px 0;
+  margin: 5px 0 0 0;
+  font-size: 16px;
 }
 .title {
   text-align: center;
+  padding: 10px;
 }
 .picker {
-  border-top: 2px solid #b8b8b8;
+  border-top: 1px solid #b8b8b8;
+  padding: 10px 0 10px 7px;
+  word-spacing: 25px;
+}
+.picker_title {
+  display: inline-block;
+  letter-spacing: 10px;
+  padding-right: -10px;
+}
+.section {
+  margin-bottom: 15px;
+}
+button {
+  width: 90% !important;
 }
