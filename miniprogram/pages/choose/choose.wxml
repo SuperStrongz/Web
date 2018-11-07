@@ -6,10 +6,10 @@
       <view class="picker">学 历： {{educationarray[educationindex]}}</view>
     </picker>
     <picker bindchange="bindPickerChangeSex" value="{{sexindex}}" range="{{sexarray}}">
-      <view class="picker">性  别：  {{sexarray[sexindex]}}</view>
+      <view class="picker">性 别： {{sexarray[sexindex]}}</view>
     </picker>
     <picker bindchange="bindPickerChangeAge" value="{{ageindex}}" range="{{agearray}}">
-      <view class="picker">年  龄： {{agearray[ageindex]}}</view>
+      <view class="picker">年 龄： {{agearray[ageindex]}}</view>
     </picker>
     <picker bindchange="bindPickerChangeBasics" value="{{basicsindex}}" range="{{basicsarray}}">
       <view class="picker">基 础： {{basicsarray[basicsindex]}}</view>

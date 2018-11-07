@@ -1,16 +1,16 @@
 Page({
   data: {
-    educationarray: ["中专", "大专", "学士", "硕士", "博士"],
+    educationarray: ["初中及以下", "高中", "大专", "本科", "硕士", "博士"],
     educationindex: 0,
     sexarray: ["男", "女"],
     sexindex: 0,
-    agearray: ["18岁以下", "18岁-24岁", "24岁-30岁", "30岁以上"],
+    agearray: ["18岁以下", "18-24岁", "25-30岁", "30岁以上"],
     ageindex: 0,
-    basicsarray: ["零基础"],
+    basicsarray: ["零基础", "绘画基础", "网络相关", "原型设计"],
     basicsindex: 0,
-    subjectarray: ["理工科", "文学"],
+    subjectarray: ["无专业", "计算机相关", "理工科", "文科"],
     subjectindex: 0,
-    logicarray: ["普通", "卓越"],
+    logicarray: ["渣渣", "普通", "卓越"],
     logicindex: 0
   },
   bindPickerChangeEducation: function(e) {
@@ -31,6 +31,11 @@ Page({
   bindPickerChangeSubject: function(e) {
     this.setData({
       subjectindex: e.detail.value
+    });
+  },
+  bindPickerChangeBasics: function(e) {
+    this.setData({
+      basicsindex: e.detail.value
     });
   },
   bindPickerChangeLogic: function(e) {

@@ -5,7 +5,9 @@
     <view wx:for="{{profession}}" wx:key="profession" class="profession {{currentTabsIndex == index ? 'clicked' : ''}}" bindtap="changeColor" data-index="{{index}}">
       {{profession[index].name}}
     </view>
-    <view wx:for="{{title}}" class="title" wx:key="title">{{title[index]}}  css</view>
+    <view wx:for="{{title}}" class="title" wx:key="title">
+      {{title[index]}}  {{filtrateResult[index]}}
+    </view>
   </view>
   <view class="studyPeople">2753人在学</view>
 </view>
