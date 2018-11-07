@@ -2,12 +2,15 @@
   <view class="toptitle">WeChat</view>
   <view class="subtitle">最适合你的职业推荐</view>
   <view class="list">
-    <view wx:for="{{profession}}" wx:key="profession" class="profession {{currentTabsIndex == index ? 'clicked' : ''}}" bindtap="changeColor" data-index="{{index}}">
-      {{profession[index].name}}
+    <view wx:for="{{filtrateResult}}" wx:key="profession" class="profession {{currentTabsIndex == index ? 'clicked' : ''}}" bindtap="changeColor" data-index="{{index}}">
+      {{filtrateResult[index][7]}}
     </view>
-    <view wx:for="{{title}}" class="title" wx:key="title">
-      {{title[index]}}  {{filtrateResult[index]}}
+    <view wx:for="{{title}}" class="title" wx:key="title" wx:for-index="idx">
+      {{title[idx]}}  {{filtrateResult[currentTabsIndex][idx]}}
+      <view wx:if="{{idx === 5}}" wx:for="{{filtrateResult[currentTabsIndex][8]}}" wx:key="salary">
+        {{item.time}} 约{{item.salary}}K
+      </view>
     </view>
   </view>
-  <view class="studyPeople">2753人在学</view>
+  <view class="studyPeople">{{filtrateResult[currentTabsIndex][6]}}人在学</view>
 </view>

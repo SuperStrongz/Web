@@ -8,13 +8,7 @@ Page({
       "入学基础",
       "资薪待遇"
     ],
-    profession: [{ name: "css" }, { name: "op" }, { name: "pm" }],
-    filtrateResult: {
-      firstShowContent: "",
-      secondShowContent: "",
-      thirdShowContent: ""
-    },
-    recommendContent: "",
+    filtrateResult: [],
     currentTabsIndex: 0,
     firstShowId: "",
     secondShowId: "",
@@ -156,7 +150,7 @@ Page({
         }
       }
     }
-    // 六个关于分数的数组相加，计算分数
+    // 六个关于分数的数组相加，计算分数,得到一个新的分数数组
     var countScore = scoreArray[0].map(function(v, i) {
       return (
         v +
@@ -204,11 +198,10 @@ Page({
       }
     ];
 
-    //展示排序后结果的前三位;
+    //根据分数排序，拿到分数排名前三的id;
     function sortId(a, b) {
       return b.score - a.score;
     }
-    console.log(rearrangement.sort(sortId)[0].id);
 
     this.setData({
       firstShowId: rearrangement.sort(sortId)[0].id,
@@ -217,40 +210,49 @@ Page({
     });
   },
   showContent: function(data) {
+    // 这里拿到了要展示的数据
     var transferFirst = data.data.occupations[this.data.firstShowId - 1];
     var transferSecond = data.data.occupations[this.data.secondShowId - 1];
     var transferThird = data.data.occupations[this.data.thirdShowId - 1];
     this.setData({
-      filtrateResult: {
-        firstShowContent: [
-          transferFirst.threshold,
-          transferFirst.difficult,
+      filtrateResult: [
+        [
+          transferFirst.threshold + "星",
+          transferFirst.difficult + "星",
           transferFirst.cycle,
           transferFirst.company,
           transferFirst.basis,
-          transferFirst.salary,
-          transferFirst.onlineUserCount
+          "",
+          transferFirst.onlineUserCount,
+          transferFirst.name,
+          transferFirst.salary
         ],
-        secondShowContent: [
-          transferSecond.threshold,
-          transferSecond.difficult,
+        [
+          transferSecond.threshold + "星",
+          transferSecond.difficult + "星",
           transferSecond.cycle,
           transferSecond.company,
           transferSecond.basis,
-          transferSecond.salary,
-          transferSecond.onlineUserCount
+          "",
+          transferSecond.onlineUserCount,
+          transferSecond.name,
+          transferFirst.salary
         ],
-        thirdShowContent: [
-          transferThird.threshold,
-          transferThird.difficult,
+        [
+          transferThird.threshold + "星",
+          transferThird.difficult + "星",
           transferThird.cycle,
           transferThird.company,
           transferThird.basis,
-          transferThird.salary,
-          transferThird.onlineUserCount
+          "",
+          transferThird.onlineUserCount,
+          transferThird.name,
+          transferFirst.salary
         ]
-      }
+      ]
     });
+    console.log(this.data.filtrateResult);
+    console.log(this.data.filtrateResult[this.data.currentTabsIndex][8]);
   },
   onShow: function() {
     var getParameter = wx.getStorageSync("key");
@@ -262,7 +264,6 @@ Page({
       url: "https://jnshu.com/a/occupation/list",
       header: {},
       success(res) {
-        console.log(res.data);
         //拿到要展示的数据
         that.showContent(res.data);
       }
