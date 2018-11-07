@@ -6,8 +6,9 @@
       {{filtrateResult[index][7]}}
     </view>
     <view wx:for="{{title}}" class="title" wx:key="title" wx:for-index="idx">
-      {{title[idx]}}  {{filtrateResult[currentTabsIndex][idx]}}
-      <view wx:if="{{idx === 5}}" wx:for="{{filtrateResult[currentTabsIndex][8]}}" wx:key="salary">
+      <view class="littletitle">{{title[idx]}}</view>
+      <view class="salary">{{filtrateResult[currentTabsIndex][idx]}}</view>
+      <view wx:if="{{idx === 5}}" wx:for="{{filtrateResult[currentTabsIndex][8]}}" wx:key="salary" class="salary">
         {{item.time}} 约{{item.salary}}K
       </view>
     </view>

@@ -43,14 +43,6 @@ Page({
       logicindex: e.detail.value
     });
   },
-  onLoad: function() {
-    this.data.educationindex = 0;
-    this.data.sexindex = 0;
-    this.data.ageindex = 0;
-    this.data.basicsindex = 0;
-    this.data.subjectindex = 0;
-    this.data.logicindex = 0;
-  },
   skip: function() {
     var passParameter = [
       this.data.educationarray[this.data.educationindex],

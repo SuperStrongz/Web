@@ -68,7 +68,7 @@ Page({
             score: [5, 5, 4, 4, 4, 5, 6, 7]
           },
           {
-            name: "25岁-30岁",
+            name: "25-30岁",
             score: [5, 5, 5, 5, 3, 4, 4, 4]
           },
           {
@@ -150,6 +150,7 @@ Page({
         }
       }
     }
+    console.log(scoreArray);
     // 六个关于分数的数组相加，计算分数,得到一个新的分数数组
     var countScore = scoreArray[0].map(function(v, i) {
       return (
@@ -214,44 +215,48 @@ Page({
     var transferFirst = data.data.occupations[this.data.firstShowId - 1];
     var transferSecond = data.data.occupations[this.data.secondShowId - 1];
     var transferThird = data.data.occupations[this.data.thirdShowId - 1];
+    var newSalaryFirst = JSON.parse(transferFirst.salary);
+    var newSalarySecond = JSON.parse(transferSecond.salary);
+    var newSalaryThird = JSON.parse(transferThird.salary);
     this.setData({
       filtrateResult: [
         [
           transferFirst.threshold + "星",
           transferFirst.difficult + "星",
           transferFirst.cycle,
-          transferFirst.company,
+          transferFirst.company + "家",
           transferFirst.basis,
           "",
           transferFirst.onlineUserCount,
           transferFirst.name,
-          transferFirst.salary
+          newSalaryFirst
         ],
         [
           transferSecond.threshold + "星",
           transferSecond.difficult + "星",
           transferSecond.cycle,
-          transferSecond.company,
+          transferSecond.company + "家",
           transferSecond.basis,
           "",
           transferSecond.onlineUserCount,
           transferSecond.name,
-          transferFirst.salary
+          newSalarySecond
         ],
         [
           transferThird.threshold + "星",
           transferThird.difficult + "星",
           transferThird.cycle,
-          transferThird.company,
+          transferThird.company + "家",
           transferThird.basis,
           "",
           transferThird.onlineUserCount,
           transferThird.name,
-          transferFirst.salary
+          newSalaryThird
         ]
       ]
     });
     console.log(this.data.filtrateResult);
+
     console.log(this.data.filtrateResult[this.data.currentTabsIndex][8]);
   },
   onShow: function() {

@@ -39,3 +39,11 @@
   color: #179b16;
   border-bottom: 3px solid #179b16;
 }
+.salary {
+  border-bottom: none !important;
+  font-size: 17px;
+  padding-left: 30%;
+}
+.littletitle {
+  float: left;
+}
