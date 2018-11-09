@@ -270,6 +270,7 @@ Page({
       header: {},
       success(res) {
         //拿到要展示的数据
+        console.log(res.data);
         that.showContent(res.data);
       }
     });
